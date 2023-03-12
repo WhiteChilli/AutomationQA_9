@@ -2,22 +2,26 @@ package org.example;
 
 public class Insurance {
 
-    public int calculateCost (int age) {
+    public int calculateCost(int age) {
 
-        int cost = 0;
+        int cost;
+        {
 
-        if (age >= 30 && age <= 60) {
-            cost = 100;
-        } else if (age >= 18 && age <= 29) {
-            cost = 120;
-        } else if (age >= 66 && age <= 79) {
-            cost = 130;
-        } else {
-            return 0;
+            if (age >= 18 && age <= 29) {
+                cost = 120;
+            } else if (age >= 30 && age <= 65) {
+                cost = 100;
+            } else if (age >= 66 && age <= 79) {
+                cost = 130;
+            } else {
+                return 0;
+            }
+            return cost;
         }
-        return cost;
     }
+
 }
+
 
 //1.1` Создайте класс Insurance, реализующий в своем методе расчет
 //        стоимости страховки по следующей логике. На вход метода подается
